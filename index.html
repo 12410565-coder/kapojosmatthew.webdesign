@@ -1,38 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kelas web design</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mid Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e61515;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #206b22;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    nav {
+      background-color: #000000;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background-color: #fff;
+      color: black;
+    }
+    .container {
+      display: flex;
+      margin: 20px;
+    }
+    .content {
+      flex: 3;
+      padding: 20px;
+      background-color: #dad7d7;
+      margin-right: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: rgb(39, 146, 247);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      color: white;
+      /* Animasi masuk */
+      animation: slideIn 1s ease-out;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .sidebar:hover {
+      transform: translateY(-5px);
+      background-color: rgb(29, 120, 210);
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateX(200px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    footer {
+      background-color: #6ce46c;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* TABEL */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 16px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .styled-table th, .styled-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    .styled-table th {
+      background-color: #1E90FF;
+      color: white;
+    }
+    .styled-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .styled-table tr:hover {
+      background-color: #d6eaff;
+    }
+
+    /* FORM */
+    .form-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+    .form-box label {
+      font-weight: bold;
+      display: block;
+      margin: 5px 0;
+    }
+    .form-box input, 
+    .form-box select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-box button {
+      background: #3fce44;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-box button:hover {
+      background: #2d9e33;
+    }
+  </style>
 </head>
 <body>
-    <h1 id="judul">Hello, kelas web design unklab</h1>
-    
-    <button onclick="ubahText()">Klik Saya</button>
-    <button onclick="resetText()">Reset</button>
+  <header>
+    <h1>KELAS WEB DESIGN PROJECT</h1>
+    <p>Membuat sebuah halaman web</p>
+  </header>
 
-    <p id="hasil"></p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <script>
-      function ubahText() {
-        document.getElementById("judul").innerHTML = "Selamat Datang";
-        let jawaban = confirm("Apakah anda yakin?");
-        if (jawaban === true) {
-          document.getElementById("hasil").textContent = "Anda menekan OK";
-        } else {
-          document.getElementById("hasil").textContent = "Anda menekan Tidak";
-        }
-      }
+  <div class="container">
+    <div class="content">
+      <h2>KONTEN UTAMA</h2>
+      <p>Selamat datang di website kami</p>
+      <img src="unklab.jpg" alt="foto background" width="100%" style="border-radius: 6px; margin-top: 10px;">
 
-      function resetText() {
-        document.getElementById("judul").innerHTML = "Hello, kelas web design unklab";
-        let jawaban = confirm("Apakah anda yakin ingin mereset?");
-        if (jawaban === true) {
-          document.getElementById("hasil").textContent = "Reset berhasil";
-        } else {
-          document.getElementById("hasil").textContent = "Reset dibatalkan";
-        }
-      }
-    </script>
+      <h4 style="margin-top:20px;">Data Nama dan Kota</h4>
+      <table class="styled-table">
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Kota</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Edi</td>
+          <td>Jogjakarta</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Adi</td>
+          <td>Bandung</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Edo</td>
+          <td>Jakarta</td>
+        </tr>
+      </table>
+
+      <h2 style="margin-top:20px;">Formulir Pendaftaran</h2>
+      <form action="#" method="post" enctype="multipart/form-data" class="form-box">
+        <!-- Nama -->
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+        <!-- Pilih Kota dengan Option Group -->
+        <label for="kota">Pilih Kota:</label>
+        <select id="kota" name="kota" required>
+          <optgroup label="Pulau Jawa">
+            <option value="jogjakarta">Jogjakarta</option>
+            <option value="bandung">Bandung</option>
+            <option value="jakarta">Jakarta</option>
+          </optgroup>
+          <optgroup label="Pulau Sumatera">
+            <option value="medan">Medan</option>
+            <option value="padang">Padang</option>
+          </optgroup>
+          <optgroup label="Sulawesi">
+            <option value="palu">Palu</option>
+            <option value="manado">Manado</option>
+          </optgroup>
+        </select>
+
+        <!-- Checkbox persetujuan -->
+        <label style="font-weight: normal;">
+          <input type="checkbox" name="setuju" required> Saya setuju dengan ketentuan
+        </label><br><br>
+
+        <!-- Tombol -->
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+
+    <div class="sidebar">
+      <h3>TENTANG WEBSITE</h3>
+      <p>WEB ini adalah contoh latihan HTML dan CSS</p>
+      <h4>Menu Tentang Kami</h4>
+      <ul>
+        <li><a href="index.html" style="color:white;">Home</a></li>
+        <li><a href="about.html" style="color:white;">About</a></li>
+        <li><a href="contact.html" style="color:white;">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
 </body>
 </html>
